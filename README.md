@@ -1,10 +1,14 @@
-# nukrax.cr
+<div align="center">
+  <img src="assets/logo.png" alt="nukrax.cr logo" width="200"/>
+  
+  # nukrax.cr
+  
+  > A minimal, secure cryptocurrency deposit portal with a focus on precision and user experience.
 
-> A minimal, secure cryptocurrency deposit portal with a focus on precision and user experience.
-
-[![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
-[![HTML](https://img.shields.io/badge/HTML-80.2%25-E34F26?logo=html5)](https://github.com/CosmoLanex/.cr)
-[![JavaScript](https://img.shields.io/badge/JavaScript-19.8%25-F7DF1E?logo=javascript)](https://github.com/CosmoLanex/.cr)
+  [![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
+  [![HTML](https://img.shields.io/badge/HTML-80.2%25-E34F26?logo=html5)](https://github.com/CosmoLanex/.cr)
+  [![JavaScript](https://img.shields.io/badge/JavaScript-19.8%25-F7DF1E?logo=javascript)](https://github.com/CosmoLanex/.cr)
+</div>
 
 ## 🌟 Overview
 
