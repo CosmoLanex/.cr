@@ -181,7 +181,7 @@ nav {
   background: linear-gradient(180deg, rgba(242,245,245,0.10), rgba(242,245,245,0.02));
   border: 1px solid rgba(242,245,245,0.14);
   box-shadow: 0 1px 0 rgba(242,245,245,0.07) inset, 0 6px 18px rgba(0,0,0,0.35);
-  padding: 9px 20px; border-radius: 999px; text-decoration: none;
+  padding: 9px 20px; border-radius: 14px; text-decoration: none;
   transition: background .25s cubic-bezier(0.22,1,0.36,1), border-color .25s cubic-bezier(0.22,1,0.36,1), transform .15s cubic-bezier(0.16,1,0.3,1);
   white-space: nowrap;
 }
@@ -291,7 +291,9 @@ main {
   font-size: 17px; font-weight: 700; color: var(--white);
   font-family: 'Space Mono', monospace;
   transition: border-color 0.2s;
+  overflow: hidden;
 }
+.cc-icon img { width: 24px; height: 24px; object-fit: contain; display: block; }
 .cc.active .cc-icon { border-color: rgba(242,245,245,0.3); }
 .cc-name {
   font-family: 'Outfit', sans-serif;
@@ -553,7 +555,7 @@ function renderCryptoGrid() {
     const el = document.createElement('div');
     el.className = 'cc'; el.dataset.key = key;
     el.innerHTML = `
-      <div class="cc-icon">${c.icon}</div>
+      <div class="cc-icon"><img src="${c.logo}" alt="${c.ticker}" loading="lazy" onerror="this.replaceWith(Object.assign(document.createElement('span'),{textContent:'${c.icon}'}))"></div>
       <div class="cc-name">${c.name}</div>
       <div class="cc-ticker">${c.ticker}</div>`;
     el.addEventListener('click', () => { playClick(); selectCrypto(key, el); });

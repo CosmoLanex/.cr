@@ -7,6 +7,7 @@ const CRYPTO_DATA = {
     name: "XRP",
     ticker: "XRP",
     icon: "✕",
+    logo: "assets/crypto-icons/xrp.svg",
     color: "#346AA9",
     networks: [
       { name: "XRP Ledger", badge: "XRP Ledger", tag: "best", address: "rU1HVivNon69SYwPkEVJXGt12yQKJtguqJ", warnings: [] },
@@ -21,6 +22,7 @@ const CRYPTO_DATA = {
     name: "Solana",
     ticker: "SOL",
     icon: "◎",
+    logo: "assets/crypto-icons/sol.svg",
     color: "#9945FF",
     networks: [
       { name: "Solana (SOL)", badge: "SOL", tag: "best", address: "Dp5YavkzJ5Chtq6rFKnim7WR3xXksJVKg5iTKZjZZH7W", warnings: ["SOL addresses are case sensitive — verify carefully before sending."] },
@@ -33,6 +35,7 @@ const CRYPTO_DATA = {
     name: "USDT",
     ticker: "USDT",
     icon: "₮",
+    logo: "assets/crypto-icons/usdt.svg",
     color: "#26A17B",
     networks: [
       { name: "TRC20 (Tron)", badge: "TRC20", tag: "suggested", address: "TJynZUP3AdMDQEzsvpWKsMkSXDBQf2Yrpt", warnings: [] },
@@ -53,6 +56,7 @@ const CRYPTO_DATA = {
     name: "USDC",
     ticker: "USDC",
     icon: "◈",
+    logo: "assets/crypto-icons/usdc.svg",
     color: "#2775CA",
     networks: [
       { name: "Solana (SPL) — USD Coin", badge: "SOL", tag: "suggested", address: "AY5hcenQD5hL9AAmZeG3Nu9mBg5AsW9djCP1onXCPCCE", warnings: [] },
@@ -65,6 +69,7 @@ const CRYPTO_DATA = {
     name: "Bitcoin",
     ticker: "BTC",
     icon: "₿",
+    logo: "assets/crypto-icons/btc.svg",
     color: "#F7931A",
     networks: [
       { name: "BTC Bitcoin", badge: "BTC", tag: "suggested", address: "bc1qk2t0uvv4j7kfzpn8mvt8uxtt6cq0dnkp4dgeas", warnings: [] },
@@ -79,6 +84,7 @@ const CRYPTO_DATA = {
     name: "Ethereum",
     ticker: "ETH",
     icon: "Ξ",
+    logo: "assets/crypto-icons/eth.svg",
     color: "#627EEA",
     networks: [
       { name: "Ethereum (ETH)", badge: "ETH", tag: "suggested", address: "0x0F50eeb9F646f1A67c68e571BDe22C4426edaeB6", warnings: [] },
@@ -98,6 +104,7 @@ const CRYPTO_DATA = {
     name: "Polygon",
     ticker: "POL",
     icon: "⬡",
+    logo: "assets/crypto-icons/matic.svg",
     color: "#8247E5",
     networks: [
       { name: "Polygon (POL)", badge: "POL", tag: "suggested", address: "0x0F50eeb9F646f1A67c68e571BDe22C4426edaeB6", warnings: [] },
@@ -108,6 +115,7 @@ const CRYPTO_DATA = {
     name: "BNB",
     ticker: "BNB",
     icon: "◆",
+    logo: "assets/crypto-icons/bnb.svg",
     color: "#F3BA2F",
     networks: [
       { name: "BNB Smart Chain (BNB)", badge: "BNB", tag: "suggested", address: "0xc9eeC2BDa7C0F7D769C7f85B2CBF2BA92BaaA5d7", warnings: [] },
@@ -119,6 +127,7 @@ const CRYPTO_DATA = {
     name: "Tron",
     ticker: "TRX",
     icon: "◇",
+    logo: "assets/crypto-icons/trx.svg",
     color: "#EB0029",
     networks: [
       { name: "Tron (TRC20) / TRX", badge: "TRC20", tag: "suggested", address: "TJynZUP3AdMDQEzsvpWKsMkSXDBQf2Yrpt", warnings: [] },
@@ -130,6 +139,7 @@ const CRYPTO_DATA = {
     name: "TWT",
     ticker: "TWT",
     icon: "⬡",
+    logo: "assets/crypto-icons/twt.png",
     color: "#3375BB",
     networks: [
       { name: "Trust Wallet (BEP20)", badge: "BEP20", tag: "", address: "0xc9eeC2BDa7C0F7D769C7f85B2CBF2BA92BaaA5d7", warnings: [] }
@@ -139,6 +149,7 @@ const CRYPTO_DATA = {
     name: "Cardano",
     ticker: "ADA",
     icon: "₳",
+    logo: "assets/crypto-icons/ada.svg",
     color: "#0033AD",
     networks: [
       { name: "Cardano (ADA)", badge: "ADA", tag: "suggested", address: "addr1q8cuylnzpprt9x2e76y2aa3d4aug593ylgawp5ha603r2des8qnd60k0zgxs459u2t26m2dk4l6gp6tt57zmu9sv2x3qcyer9f", warnings: [] },
