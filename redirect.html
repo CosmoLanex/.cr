@@ -3,7 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>nukrax.cr — Loading</title>
+<style>html{-webkit-text-size-adjust:100%;text-size-adjust:100%}</style>
+<title>nukrax.cr — Initializing</title>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Space+Mono:wght@400&display=swap" rel="stylesheet">
 <style>
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -195,18 +196,19 @@ function nextStep() {
   fill.style.width = s.pct + '%';
   statEl.textContent = s.label;
   if (step < STEPS.length) {
-    setTimeout(nextStep, step === 1 ? 320 : step === 2 ? 280 : 240);
+    setTimeout(nextStep, step === 1 ? 200 : step === 2 ? 180 : 150);
   } else {
     // exit and redirect
     setTimeout(() => {
       document.body.classList.add('exit');
       setTimeout(() => {
+        sessionStorage.setItem('nukrax_navigate', 'true');
         location.href = `crypto.html?c=${cKey}&n=${nIdx}`;
-      }, 450);
-    }, 220);
+      }, 250);
+    }, 150);
   }
 }
-setTimeout(nextStep, 350);
+setTimeout(nextStep, 200);
 
 // minimal particle bg
 (function() {
