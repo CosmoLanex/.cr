@@ -7,7 +7,7 @@
 <title>nukrax.cr</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Outfit:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
-<link rel="icon" href="assets/c-logo.png" type="image/png"/>
+<link rel="icon" href="assets/logo.png" type="image/png"/>
 <style>
 :root {
   --bg:       #07090B;
@@ -202,37 +202,57 @@ main {
 
 /* ── HERO ── */
 .hero {
+  position: relative;
   text-align: center;
   margin-bottom: clamp(36px,5vw,56px);
-  animation: riseIn 0.7s ease 0.2s both;
 }
+.hero-glow {
+  position: absolute;
+  top: -80px; left: 50%; transform: translateX(-50%);
+  width: 480px; height: 320px;
+  background: radial-gradient(ellipse at center, rgba(143,184,196,0.16), transparent 70%);
+  filter: blur(10px);
+  pointer-events: none; z-index: 0;
+  opacity: 0;
+  animation: glowIn 1.6s ease 0.3s forwards;
+}
+@keyframes glowIn { to { opacity: 1; } }
 @keyframes riseIn {
   from { opacity:0; transform: translateY(20px); }
   to   { opacity:1; transform: none; }
 }
 .hero-sup {
+  position: relative; z-index: 1;
   display: inline-flex; align-items: center; gap: 8px;
   background: var(--layer3); border: 1px solid var(--border2);
   border-radius: 40px; padding: 5px 14px;
   font-size: 11px; color: var(--secondary);
   font-family: 'Space Mono', monospace;
   letter-spacing: 0.1em; text-transform: uppercase;
-  margin-bottom: 20px;
+  margin-bottom: 22px;
+  opacity: 0;
+  animation: riseIn 0.7s cubic-bezier(0.22,1,0.36,1) 0.1s forwards;
 }
 .hero-sup .dot2 { width:5px;height:5px;border-radius:50%;background:var(--mid); }
 .hero h1 {
+  position: relative; z-index: 1;
   font-family: 'Outfit', sans-serif;
-  font-size: clamp(28px,5vw,46px);
-  font-weight: 700; line-height: 1.1;
+  font-size: clamp(32px,6vw,54px);
+  font-weight: 200; line-height: 1.08;
   color: var(--white);
-  letter-spacing: -0.03em;
-  margin-bottom: 14px;
+  letter-spacing: -0.02em;
+  margin-bottom: 16px;
+  opacity: 0;
+  animation: riseIn 0.8s cubic-bezier(0.22,1,0.36,1) 0.22s forwards;
 }
-.hero h1 span { color: var(--secondary); }
+.hero h1 span { font-weight: 500; color: var(--accent); }
 .hero p {
+  position: relative; z-index: 1;
   font-size: 15px; color: var(--secondary);
   max-width: 420px; margin: 0 auto;
   line-height: 1.6; font-weight: 400;
+  opacity: 0;
+  animation: riseIn 0.8s cubic-bezier(0.22,1,0.36,1) 0.34s forwards;
 }
 
 /* ── SECTION LABEL ── */
@@ -264,7 +284,11 @@ main {
   user-select: none;
   position: relative;
   overflow: hidden;
+  opacity: 0;
+  animation: ccIn 0.5s cubic-bezier(0.22,1,0.36,1) forwards;
+  animation-delay: calc(var(--i, 0) * 45ms + 380ms);
 }
+@keyframes ccIn { from { opacity:0; transform: translateY(14px) scale(0.96); } to { opacity:1; transform:none; } }
 .cc::before {
   content: '';
   position: absolute; inset: 0;
@@ -272,8 +296,9 @@ main {
   opacity: 0; transition: opacity 0.2s;
   border-radius: inherit;
 }
-@media (hover:hover) and (pointer:fine){.cc:hover { border-color: var(--border2); background: var(--layer3); transform: translateY(-2px); box-shadow: var(--shadow); }}
+@media (hover:hover) and (pointer:fine){.cc:hover { border-color: var(--accent); background: var(--layer3); transform: translateY(-3px); box-shadow: var(--shadow), 0 0 0 1px rgba(143,184,196,0.15), 0 8px 24px rgba(143,184,196,0.12); }}
 @media (hover:hover) and (pointer:fine){.cc:hover::before { opacity: 1; }}
+@media (hover:hover) and (pointer:fine){.cc:hover .cc-icon { transform: scale(1.08); }}
 .cc:active { transform: translateY(0) scale(0.97); }
 .cc.active {
   border-color: rgba(242,245,245,0.25);
@@ -284,16 +309,16 @@ main {
 
 .cc-icon {
   width: 42px; height: 42px; border-radius: 50%;
-  background: var(--layer4);
+  background: #F2F5F5;
   border: 1px solid var(--border2);
   display: flex; align-items: center; justify-content: center;
   margin: 0 auto 10px;
-  font-size: 17px; font-weight: 700; color: var(--white);
+  font-size: 17px; font-weight: 700; color: var(--layer1);
   font-family: 'Space Mono', monospace;
-  transition: border-color 0.2s;
+  transition: border-color 0.2s, transform 0.25s cubic-bezier(0.34,1.56,0.64,1);
   overflow: hidden;
 }
-.cc-icon img { width: 24px; height: 24px; object-fit: contain; display: block; }
+.cc-icon img { width: 26px; height: 26px; object-fit: contain; display: block; }
 .cc.active .cc-icon { border-color: rgba(242,245,245,0.3); }
 .cc-name {
   font-family: 'Outfit', sans-serif;
@@ -326,15 +351,18 @@ main {
   display: flex; align-items: center; gap: 12px;
   transition: all 0.18s ease;
   position: relative; overflow: hidden;
+  opacity: 0;
+  animation: ccIn 0.45s cubic-bezier(0.22,1,0.36,1) forwards;
+  animation-delay: calc(var(--i, 0) * 55ms);
 }
 .nc::after {
   content: '';
   position: absolute; left:0; top:0; bottom:0; width:2px;
-  background: var(--white); opacity: 0;
+  background: var(--accent); opacity: 0;
   transition: opacity 0.18s; border-radius: 2px 0 0 2px;
 }
-@media (hover:hover) and (pointer:fine){.nc:hover { border-color: var(--border2); background: var(--layer3); transform: translateX(2px); }}
-.nc.active { border-color: rgba(242,245,245,0.2); background: var(--layer3); }
+@media (hover:hover) and (pointer:fine){.nc:hover { border-color: var(--accent); background: var(--layer3); transform: translateX(2px); }}
+.nc.active { border-color: rgba(143,184,196,0.35); background: var(--layer3); }
 .nc.active::after { opacity: 1; }
 .nc:active { transform: scale(0.98); }
 
@@ -469,6 +497,7 @@ footer {
 
   <main>
     <div class="hero">
+      <div class="hero-glow"></div>
       <div class="hero-sup"><span class="dot2"></span>Secure · Non-custodial · Read-only</div>
       <h1>Deposit <span>Crypto</span><br>With Precision</h1>
       <p>Select an asset and network to instantly receive your verified deposit address.</p>
@@ -551,9 +580,10 @@ let activeCrypto = null;
 
 function renderCryptoGrid() {
   const g = document.getElementById('cryptoGrid');
-  Object.entries(CRYPTO_DATA).forEach(([key, c]) => {
+  Object.entries(CRYPTO_DATA).forEach(([key, c], idx) => {
     const el = document.createElement('div');
     el.className = 'cc'; el.dataset.key = key;
+    el.style.setProperty('--i', idx);
     el.innerHTML = `
       <div class="cc-icon"><img src="${c.logo}" alt="${c.ticker}" loading="lazy" onerror="this.replaceWith(Object.assign(document.createElement('span'),{textContent:'${c.icon}'}))"></div>
       <div class="cc-name">${c.name}</div>
@@ -590,6 +620,7 @@ function renderNetGrid(key) {
   CRYPTO_DATA[key].networks.forEach((n, i) => {
     const el = document.createElement('div');
     el.className = 'nc'; el.dataset.idx = i;
+    el.style.setProperty('--i', i);
     let tag = '';
     if (n.tag === 'best') tag = '<span class="tag-best">★ Best</span>';
     else if (n.tag === 'suggested') tag = '<span class="tag-sug">Suggested</span>';
