@@ -25,7 +25,7 @@ const DEPOSIT_ADDRESSES = {
   // ─────────────────────────────────────────────
   XRP: {
     "XRP Ledger": { address: "rU1HVivNon69SYwPkEVJXGt12yQKJtguqJ" },
-    "XRP (XRP)": { address: "rNgJhLjpyNbr7g6M2WquSWsiV8LGNC9DtD" },
+    "XRP (XRP)": { address: "yoooooooooooooooooooooooooooooooooooooo" },
     "BNB Smart Chain (BEP20)": { address: "0xc9eeC2BDa7C0F7D769C7f85B2CBF2BA92BaaA5d7" },
     "XRP Ledger + MEMO": { address: "rNxp4h8apvRis6mJf9Sh8C6iRxfrDWN7AV", memo: "437079162" },
     "BNB Smart Chain (BEP20) #2": { address: "0x3391cc7250b2b035f38259cb2b49d2ad014d718b" },
