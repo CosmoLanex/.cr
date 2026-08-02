@@ -223,7 +223,11 @@ function nextStep() {
       document.body.classList.add('exit');
       setTimeout(() => {
         sessionStorage.setItem('nukrax_navigate', 'true');
-        location.href = `crypto.html?c=${cKey}&n=${nIdx}`;
+        // location.replace (not .href) so this transition page never becomes
+        // a real history entry — otherwise pressing the browser/mobile back
+        // button from crypto.html lands here and immediately auto-forwards
+        // right back to crypto.html, making back navigation feel broken.
+        location.replace(`crypto.html?c=${cKey}&n=${nIdx}`);
       }, 250);
     }, 150);
   }
